@@ -1,15 +1,14 @@
 # BMB 502 Term Project
 # DESeq2
 
+# install BiocManager package
 if (!require("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
 
+# install DESeq2 package
 BiocManager::install("DESeq2")
 
-install.packages("BiocManager", dependencies = TRUE)
-install.packages("DESeq2", dependencies = TRUE)
-
-
+# load libraries
 library("DESeq2")
 #library(tidyverse)
 library(airway)
@@ -57,10 +56,8 @@ summary(res0.01)
 resultsNames(dds)
 
 # MA plot
-# Currently looks nothing like Galaxy MA plot oof
 plotMA(res)
 
-# This is giving me hell
 plotPCA(res)
 # Install ggfortify for PCA plot
 # library(pheatmap)
